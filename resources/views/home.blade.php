@@ -37,7 +37,7 @@
                 <li><a href="#historia">Nuestra Historia</a></li>
                 <li><a href="#reseñas">Reseñas</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="">Hombres de Barro</a></li>
+                <li><a href="https://hombresdebarro.com/" target="blank">Hombres de Barro</a></li>
             </ul>
         </nav>
     </main>
