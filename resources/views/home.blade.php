@@ -101,16 +101,16 @@
             <div class="history-box short-box" style="--bg-color: 224, 176, 96;">
                 <img src="{{ asset('images/rings-zoomed-picture.jpg') }}" alt="Detalles de Joyería">
                 <div class="box-text">
-                    <h3>La Filigrana en Oro y Plata</h3>
-                    <p>Una mirada cercana a nuestras joyas artesanales. Cada pieza de filigrana es meticulosamente elaborada, capturando la elegancia colonial en diseños contemporáneos.</p>
+                    <h3>Manejo de Esmeraldas</h3>
+                    <p>Una mirada cercana a nuestras joyas artesanales. Cada pieza es meticulosamente elaborada, capturando la elegancia colonial en diseños contemporáneos.</p>
                 </div>
             </div>
 
             <div class="history-box medium-box" style="--bg-color: 224, 200, 150;">
                 <img src="{{ asset('images/jewelry-counter.jpg') }}" alt="Taller de Orfebrería">
                 <div class="box-text">
-                    <h3>La Mano del Orfebre</h3>
-                    <p>Descubra la dedicación detrás del metal. Nuestros artesanos utilizan herramientas ancestrales y técnicas pulidas por el tiempo para dar vida a cada collar y anillo.</p>
+                    <h3>La Mano del Maestro</h3>
+                    <p>Descubra la dedicación detrás de los materiales. Nuestros artesanos utilizan herramientas ancestrales y técnicas pulidas por el tiempo para dar vida a cada pieza.</p>
                 </div>
             </div>
 
@@ -125,8 +125,8 @@
             <div class="history-box medium-box" style="--bg-color: 100, 100, 100;">
                 <img src="{{ asset('images/mud-pieces-2.jpg') }}" alt="alfareria y Joyería de Diseño">
                 <div class="box-text">
-                    <h3>Alfareria Inspirada en Muisca</h3>
-                    <p>Nuestra colección de pequeños tesoros inspirados en la alfareria precolombina. Utilizamos metales nobles para rendir homenaje a la riqueza cultural Muisca.</p>
+                    <h3>Alfareria Inspirada en Nuestra Colombia</h3>
+                    <p>Nuestra colección de pequeños tesoros inspirados en la alfareria precolombina. Utilizamos materiales nobles para rendir homenaje a la riqueza multicultural.</p>
                 </div>
             </div>
             
@@ -134,7 +134,7 @@
                 <img src="{{ asset('images/second-floor-perspective-zone-1.jpg') }}" alt="Objetos Únicos de Decoración">
                 <div class="box-text">
                     <h3>Objetos Únicos de Decoración</h3>
-                    <p>Nuestros objetos decorativos y utilitarios son la fusión de arte y funcionalidad. Desde hombres de barro hasta tejidos artesanales, cada artículo embellece su hogar.</p>
+                    <p>Nuestros objetos decorativos y utilitarios son la fusión de arte y funcionalidad. Desde hombres de barro hasta tejidos artesanales, cada artículo embellece su lugar.</p>
                 </div>
             </div>
             
