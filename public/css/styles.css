@@ -1,21 +1,575 @@
-/* public/css/styles.css */
+/*====================================================================
+  GLOBAL & BACKGROUND STYLES
+======================================================================*/
+
 body {
-    background-color: #f4f4f4; /* Gris muy claro para el fondo */
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    background-image: url('../images/fountain-OP.jpg');
+    background-size: cover; 
+    background-color: #000000; 
+    background-position: center; 
+    
+    /* KEY FIX: Prevents the background image from scrolling with the content. */
+    background-attachment: fixed; 
+    
+    background-repeat: no-repeat;
+    
+    scroll-behavior: smooth;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0; 
+    box-sizing: border-box;
 }
 
-h1 {
-    color: #007bff; /* Azul fuerte para el título */
-    border-bottom: 2px solid #54c737;
-    padding-bottom: 10px;
+.first {
+    min-height: 100vh; 
+    margin: 0; 
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Dark overlay to match the moody lighting in the reference image (KEEP THIS BLOCK) */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* This is the darkening layer */
+    z-index: -1; 
+}
+
+/*====================================================================
+  SECOND SECTION INTRO TEXT
+======================================================================*/
+
+.section-intro {
+    width: 100%; 
+    margin: 0 auto 30px auto; 
+    padding-left: 10px; 
+
+}
+
+.section-intro p {
+    color: #333333; /* Dark gray/black text on the white background */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.0em; /* Adjust size as needed */
+    font-style: italic;
+    font-weight: bold;
+    max-width: 800px;
+    /* Align to the left (default) */
+    text-align: left;
+    
+    margin: 0;
+}
+
+/*====================================================================
+  SECOND SECTION (Image Gallery)
+======================================================================*/
+
+.second {
+    background-color: #ffffff; 
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.image-grid {
+    max-width: 90%; /* Ensures it uses full width if padding is applied to .second */
+    margin: 100px auto;
+    
+    /* KEY: Define the grid layout */
+    display: grid;
+    
+    /* Set 2 columns of equal width (1 fraction unit each) */
+    grid-template-columns: 1fr 1fr; 
+    
+    /* Spacing between the images */
+    gap: 20px;
+}
+
+.image-box {
+    position: relative; 
+    width: 100%;
+    
+    /* KEY: Defines the height to be equal to the calculated width of the column */
+    aspect-ratio: 1 / 1; 
+    
+    overflow: hidden; 
+    cursor: default; 
+
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+.image-box img {
+    /* Ensures the image fills the entire square box, cropping as needed */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    
+    display: block;
+    /* REMOVE all panning related styles */
+    transform: none; 
+    transition: none; 
+}
+
+/* Media Query to switch to 1 image per line on small screens */
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
+
+/*====================================================================
+  "MORE IMAGES" BUTTON
+======================================================================*/
+
+.button-container {
+    /* Center the button container horizontally */
+    width: 100%;
+    text-align: center;
+    
+    /* Add top margin to separate it from the image grid */
+    margin-top: 40px; 
+    margin-bottom: 20px;
+}
+
+.more-images-button {
+    /* Styling to match a bold, dark, colonial feel */
     display: inline-block;
+    padding: 12px 30px;
+    
+    /* Colors */
+    background-color: #333333; /* Dark gray/black background */
+    color: #ffffff; /* White text */
+    
+    /* Typography */
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    /* Shape and Transition */
+    border-radius: 5px;
+    border: 2px solid #333333; /* Solid border for definition */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.bienvenida {
-    padding: 30px;
-    margin-top: 50px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.more-images-button:hover {
+    /* Hover effect: reverse the colors for interaction */
+    background-color: #ffffff;
+    color: #333333;
+    cursor: pointer;
+}
+
+/*====================================================================
+  HEADER & NAVIGATION (Top Bar)
+======================================================================*/
+
+.navigation-bar {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 15px 30px; 
+    width: 100%; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.spacer {
+    display: none;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+}
+
+.main-logo {
+    height: 40px; 
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+
+.Logo-text {
+    font-family: 'Times New Roman', Times, serif;
+    color: white; 
+    font-size: 1.5em; 
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.principal-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.principal-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em; 
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.principal-menu li:last-child a {
     background-color: white;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*====================================================================
+  MAIN HERO CONTENT (Sizing for full screen)
+======================================================================*/
+
+main {
+    height: 20%; /* Keep your desired 20% height */
+    
+    /* ADD VERTICAL PADDING to create more space above and below the content */
+    padding-top: 50px; 
+    padding-bottom: 50px; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    
+    flex-grow: 0; 
+    padding-left: 20px; /* Keep horizontal padding */
+    padding-right: 20px; /* Keep horizontal padding */
+    
+    text-align: center; 
+    width: 100%;
+}
+
+/* Responsive Typography using Viewport Units (vw) */
+h1 {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 5.5vw; /* Fluid scaling for large text */
+    font-size: 90px; /* Max size on very large screens */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.1em; 
+    line-height: 1.1;
+    max-width: 1000px;
+}
+
+.secondary-title {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.8vw; /* Fluid scaling */
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 30px;
+    
+    background-color: transparent !important;
+    padding: 0;
+    border-radius: 0;
+    width: auto !important; 
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+.main-text {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2vw; /* Fluid scaling */
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    
+    backdrop-filter: none;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    width: 80%; 
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    padding: 0;
+}
+
+/* Centered navigation links */
+.navigation-links {
+    width: 30%; 
+    max-width: 600px;
+    margin: 20px auto; 
+    background-color: rgba(206, 201, 201, 0.226); 
+    border-radius: 15px; 
+    padding: 15px 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px); 
+    box-shadow: 10 10 10px rgba(0, 0, 0, 0.3);
+
+    position: relative; 
+
+    backdrop-filter: blur(5px); 
+    box-shadow: 10 10 10px rgba(0, 0, 0, 0.3);
+}
+
+.navigation-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.navigation-links li a {
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: bold;
+    font-size: 1.5vw; /* Fluid scaling for menu links */
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 8px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigation-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.589); 
+    color: black;
+}
+
+/*====================================================================
+  VIDEO SECTION 
+======================================================================*/
+
+.video-section {
+    width: 50%; /* Responsive 50% width */
+    
+    margin: 0 auto 40px auto; 
+    
+    border: 10px solid rgb(44, 41, 41); /* Dark border */
+    border-radius: 20px; /* Rounded corners */
+
+    padding:0; 
+    overflow:hidden;
+    height:auto;
+}
+
+.full-width-video {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+/*====================================================================
+  MEDIA QUERIES (Mobile Adjustments)
+======================================================================*/
+
+@media (max-width: 768px) {
+    /* --- NAVIGATION BAR --- */
+    .navigation-bar {
+        /* Stack header items vertically */
+        flex-direction: column; 
+        padding: 15px 10px;
+    }
+    
+    .principal-menu {
+        /* Reduce menu gap and space them out */
+        gap: 15px;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* --- HERO CONTENT SCALING --- */
+    h1 {
+        /* Increase fluid scaling for smaller screens */
+        font-size: 10vw; 
+    }
+
+    .secondary-title {
+        font-size: 3vw; 
+    }
+
+    .main-text {
+        font-size: 3.5vw;
+        max-width: 90%;
+    }
+
+    /* --- VIDEO SECTION --- */
+    .video-section {
+        margin: 20px auto 40px auto; 
+        width: 95%; 
+    }
+
+    .navigation-links {
+        width: 90%;
+    }
+    
+    .navigation-links li a {
+        font-size: 2.5vw;
+    }
+}
+
+/*====================================================================
+  TERCERO SECTION (Creative History Grid)
+======================================================================*/
+
+.tercero {
+    color: #f0f0f0; 
+    /* Increased top/bottom padding for more space */
+    padding: 100px 80px; 
+    box-sizing: border-box; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    
+    /* Full width as requested */
+    width: 100%; 
+}
+
+/* --- INTRO TEXT STYLING AND SPACING --- */
+.history-grid-container {
+    width: 100%;
+    margin: 0; 
+}
+
+.history-intro {
+    width: 100%;
+    /* Increased spacing below the introduction */
+    margin: 0 0 70px 0; 
+    text-align: left; /* Ensure text is left-aligned */
+    color: #e0b060; 
+}
+
+.history-intro h2 {
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #e0b060;
+    text-align: left;
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    margin-bottom: 10px;
+}
+.history-intro p {
+    text-align: left; 
+}
+
+/* --- THE CORE GRID LAYOUT (6 BOXES) --- */
+.history-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    
+    /* Sets the minimum height for one row and allows content to expand naturally */
+    grid-auto-rows: minmax(220px, auto); 
+    
+    gap: 20px;
+}
+
+/* --- HEIGHT VARIATIONS (Staggered Effect) --- */
+.tall-box {
+    grid-row-end: span 4; /* Very tall box */
+}
+
+.medium-box {
+    grid-row-end: span 2.5; /* Medium height */
+}
+
+.short-box {
+    grid-row-end: span 2; /* Minimum height */
+}
+
+
+/* --- INDIVIDUAL BOX STYLING --- */
+.history-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: auto; 
+    
+    border: 1px solid rgba(224, 176, 96, 0.2); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    
+    background-color: rgba(26, 26, 26, 0.3); 
+    
+    /* CONFIRMED: Equal padding on all 4 sides */
+    padding: 25px; 
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* KEY FIX: Ensures ALL content starts at the very top (start) */
+    justify-content: flex-start; 
+}
+
+.history-box img {
+    width: 100%;
+    /* Let the image determine its height based on its aspect ratio */
+    height: auto; 
+    object-fit: cover;
+    border-radius: 8px;
+    /* Reduced margin below image to control spacing */
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+/* Ensure text is on top of the blurred background */
+.box-text {
+    position: relative;
+    z-index: 2; 
+    color: #f0f0f0; 
+    
+    /* KEY FIX: Remove any default browser padding/margin conflicts here */
+    padding: 0;
+    margin: 0;
+}
+
+.box-text h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e0b060;
+    /* KEY FIX: Strict margins to ensure no default spacing pushes the title down */
+    margin: 10px 0; 
+}
+
+.box-text p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    /* KEY FIX: Strict margins to ensure no default spacing pushes the paragraph down */
+    margin: 0; 
+}
+
+/* --- MEDIA QUERY for Mobile --- */
+@media (max-width: 768px) {
+    .history-boxes {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-auto-rows: minmax(250px, auto); /* Consistent min height on mobile */
+    }
+    
+    /* Reset height spans on mobile to ensure all boxes are uniform height */
+    .tall-box, .medium-box, .short-box {
+        grid-row-end: span 1; 
+    }
+    
+    .tercero {
+        padding: 40px 20px; /* Reduce padding on mobile */
+    }
 }
