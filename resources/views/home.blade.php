@@ -73,7 +73,7 @@
         </div>
 
         <div class="button-container">
-            <a href="https://hombresdebarro.com" target="_blank" rel="noopener noreferrer" class="more-images-button">
+            <a href="#" rel="noopener noreferrer" class="more-images-button">
                 Una muestra de nosotros...
             </a>
         </div>
