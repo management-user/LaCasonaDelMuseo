@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>La Casona del Museo</title>
+    <link rel="icon" type="image/jpg" href="{{ asset('images/favicon.jpg') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
@@ -29,22 +30,21 @@
     <main id="main">
         <h3 class="secondary-title">Memorias Coloniales</h3> 
         <h1>Donde la Historia Vive</h1>
-        <p class="main-text">Bienvenidos a una muestra de cultura multicultural y café, los invitamos a ir a nuestra nueva dirección. Espero que les guste nuestra artesania.</p>
+        <p class="main-text">Bienvenidos a una muestra de cultura multicultural y café, los invitamos a ir a visitarnos. Espero que les guste nuestra artesania.</p>
 
         <nav class="navigation-links">
             <ul>
                 <li><a href="#galeria">Inicio</a></li>
-                <li><a href="#historia">Nuestra Historia</a></li>
+                <li><a href="#historia">Nuestra Casona</a></li>
                 <li><a href="#reseñas">Reseñas</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="https://hombresdebarro.com/" target="blank">Hombres de Barro</a></li>
             </ul>
         </nav>
     </main>
     
         <section class="video-section" id="videoSection">
             <video autoplay loop muted playsinline poster="{{ asset('images/video-poster.jpg') }}" class="full-width-video">
-                <source src="{{ asset('videos/Cover_Final.mp4') }}" type="video/mp4">
+                <source src="{{ asset('videos/cover-1_slowed.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </section>
@@ -74,7 +74,7 @@
 
         <div class="button-container">
             <a href="https://hombresdebarro.com" target="_blank" rel="noopener noreferrer" class="more-images-button">
-                Catálogo de Hombres de Barro
+                Una muestra de nosotros...
             </a>
         </div>
     </section>
@@ -91,7 +91,7 @@
             </div>
 
             <div class="history-box medium-box" style="--bg-color: 150, 111, 214;">
-                <img src="{{ asset('images/zone-2-full.jpg') }}" alt="Ambiente de Café y Tertulia">
+                <img src="{{ asset('images/Coffee-shop.jpeg') }}" alt="Ambiente de Café y Tertulia">
                 <div class="box-text">
                     <h3>La Experiencia de la Casona</h3>
                     <p>Un espacio que invita a la tertulia y el descanso. Disfrute de nuestra atmósfera colonial mientras degusta su café, rodeado de arte y tranquilidad.</p>
