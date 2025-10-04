@@ -262,10 +262,13 @@
     </section>
 
     <footer class="text-center py-4" style="background-color: #111; color: white;">
-        <p class="mb-1">Carrera 5 # 16-43 (JUNTO AL PARQUEADERO DEL MUSEO DEL ORO)</p>
-        <p class="mb-1">Teléfonos: (57) 310 8754128 | (57-1) 2 439 628</p>
+        <p class="mb-1">HDB</p>
+        <p class="mb-1">Carrera 5 # 16-43</p>
+        <p class="mb-1">Calle 16 # 5-22</p>
+        <p class="mb-1">ESC 28 - Ruta de Evacuacion</p>
+        <p class="mb-1">Teléfonos: (57) 310 8754128</p>
         <p class="mb-1">E-Mail: <a href="mailto:lacasonadelmuseo@yahoo.com" style="color: #fff; text-decoration: none;">lacasonadelmuseo@yahoo.com</a></p>
-        <p class="mb-1">Horario: Lunes a sábado de 9 am a 7 pm | Domingos de 10 am a 5 pm</p>
+        <p class="mb-1">Horario: Lunes a sábado de 9 am a 6 pm | Domingos de 10 am a 5 pm</p>
         <p class="mb-0">Bogotá - Colombia</p>
     </footer>
 
